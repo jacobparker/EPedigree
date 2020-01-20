@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D51CB9D2-7579-488C-8F76-DCAAA4261A65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPedigree</RootNamespace>
+    <AssemblyName>EPedigree</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CancelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelForm.Designer.cs">
+      <DependentUpon>CancelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePedigreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePedigreeForm.Designer.cs">
+      <DependentUpon>CreatePedigreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnvelopeMergeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnvelopeMergeForm.Designer.cs">
+      <DependentUpon>EnvelopeMergeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnvelopeReceiverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnvelopeReceiverForm.Designer.cs">
+      <DependentUpon>EnvelopeReceiverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnvelopeSenderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnvelopeSenderForm.Designer.cs">
+      <DependentUpon>EnvelopeSenderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManufacturerForm.Designer.cs">
+      <DependentUpon>ManufacturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Business\Exceptions\PropertyFileNotFoundException.cs" />
+    <Compile Include="Model\Business\Exceptions\ServiceLoadException.cs" />
+    <Compile Include="Model\Business\Factory\ServiceFactory.cs" />
+    <Compile Include="Model\Business\Managers\EnvelopeManager.cs" />
+    <Compile Include="Model\Business\Managers\ManagerSuperType.cs" />
+    <Compile Include="Model\Business\Managers\ManufacturerManager.cs" />
+    <Compile Include="Model\Business\Managers\PedigreeManager.cs" />
+    <Compile Include="Model\Business\Managers\ProductManager.cs" />
+    <Compile Include="Model\Business\Managers\ReceiverDataManager.cs" />
+    <Compile Include="Model\Business\Managers\SenderDataManager.cs" />
+    <Compile Include="Model\Domain\Envelope.cs" />
+    <Compile Include="Model\Domain\Manufacturer.cs" />
+    <Compile Include="Model\Domain\Pedigree.cs" />
+    <Compile Include="Model\Domain\Product.cs" />
+    <Compile Include="Model\Domain\ReceiversEnvelopeDataForm.cs" />
+    <Compile Include="Model\Domain\SendersEnvelopeDataForm.cs" />
+    <Compile Include="Model\Services\EnvelopeService\EnvelopeSvcImpl.cs" />
+    <Compile Include="Model\Services\EnvelopeService\IEnvelopeService.cs" />
+    <Compile Include="Model\Services\Exceptions\EnvelopeCompositeServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\EnvelopeServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\ManufacturerServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\PedigreeCompositeServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\PedigreeServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\ProductServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\ReceiverDataServiceException.cs" />
+    <Compile Include="Model\Services\Exceptions\SenderDataServiceException.cs" />
+    <Compile Include="Model\Services\IService.cs" />
+    <Compile Include="Model\Services\ManufacturerService\IManufacturerService.cs" />
+    <Compile Include="Model\Services\ManufacturerService\ManufacturerSvcImpl.cs" />
+    <Compile Include="Model\Services\PedigreeService\IPedigreeService.cs" />
+    <Compile Include="Model\Services\PedigreeService\PedigreeSvcImpl.cs" />
+    <Compile Include="Model\Services\ProductService\IProductService.cs" />
+    <Compile Include="Model\Services\ProductService\ProductSvcImpl.cs" />
+    <Compile Include="Model\Services\ReceiverDataService\IReceiverDataService.cs" />
+    <Compile Include="Model\Services\ReceiverDataService\ReceiverDataSvcImpl.cs" />
+    <Compile Include="Model\Services\SenderDataService\ISenderDataService.cs" />
+    <Compile Include="Model\Services\SenderDataService\SenderDataSvcImpl.cs" />
+    <Compile Include="ProductCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCreateForm.Designer.cs">
+      <DependentUpon>ProductCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveMessageForm.Designer.cs">
+      <DependentUpon>SaveMessageForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CancelForm.resx">
+      <DependentUpon>CancelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePedigreeForm.resx">
+      <DependentUpon>CreatePedigreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvelopeMergeForm.resx">
+      <DependentUpon>EnvelopeMergeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvelopeReceiverForm.en.resx">
+      <DependentUpon>EnvelopeReceiverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvelopeReceiverForm.resx">
+      <DependentUpon>EnvelopeReceiverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvelopeSenderForm.resx">
+      <DependentUpon>EnvelopeSenderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManufacturerForm.resx">
+      <DependentUpon>ManufacturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductCreateForm.resx">
+      <DependentUpon>ProductCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SaveMessageForm.resx">
+      <DependentUpon>SaveMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
